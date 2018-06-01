@@ -76,7 +76,7 @@ trait Permission
         }
 
         if ($parent instanceof $roleModel) {
-            return new PermissionRolePivot($parent, $attributes, $table, $exists, $using);
+            return new PermissionRolePivot($parent->toArray(), $attributes, $table, $exists, $using);
         }
 
         return parent::newPivot($parent, $attributes, $table, $exists);
